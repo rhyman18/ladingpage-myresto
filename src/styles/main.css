@@ -32,12 +32,13 @@ header {
 }
 
 .hamburger {
-  display: block;
+  display: inline-block;
   cursor: pointer;
   background: #ffffff;
   border: 0;
   font-size: 24px;
   color: #999999;
+  padding: 8px 12px;
 }
 
 .hamburger:active {
@@ -60,6 +61,7 @@ header {
 }
 
 .nav-link {
+  padding: 12px 0;
   font-weight: 400;
   color: #999999;
 }
@@ -83,7 +85,6 @@ header {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
@@ -101,14 +102,15 @@ header {
 #hero p {
   color: #ffffff;
   text-align: center;
+  padding: 10px 0;
+  margin-bottom: 20px;
 }
 
 #hero a {
   font-size: 14px;
-  margin-top: 20px;
   color: #ffffff;
   border: 2px solid #f34949;
-  padding: 8px 30px;
+  padding: 10px 40px;
   transition: ease-in-out 0.3s;
 }
 
@@ -197,7 +199,7 @@ header {
   display: inline;
   z-index: 10;
   position: absolute;
-  margin-top: 10px;
+  transform: translateY(-550%);
 }
 
 footer {
@@ -239,7 +241,7 @@ footer {
 .sosmed a {
   color: #ffffff;
   background-color: #23262A;
-  padding: 10px;
+  padding: 12px;
   border-radius: 9999px;
 }
 
@@ -264,6 +266,7 @@ footer {
 .foot-misc ul li a {
   color: #ffffff;
   font-weight: 400;
+  padding: 11px 0;
 }
 
 .foot-misc ul li a:hover {
@@ -289,9 +292,9 @@ footer {
 
 .skip-link {
   position: absolute;
-  top: -40px;
+  top: -50px;
   left: 0;
-  padding: 6px;
+  padding: 9.5px;
   background-color: #f34949;
   color: white;
   z-index: 100;
@@ -329,17 +332,13 @@ footer {
   #hero h2 {
     font-size: 50px;
   }
-
-  #hero a {
-    padding: 10px 40px;
-  }
 }
 
 @media only screen and (max-width: 768px) {
   .nav-menu {
     position: fixed;
     right: -100%;
-    top: 4.5rem;
+    top: 5.5rem;
     flex-direction: column;
     background-color: #ffffff;
     width: 100%;
