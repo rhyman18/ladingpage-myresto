@@ -1,6 +1,7 @@
 const common = require('./webpack.common');
-const { merge } = require('webpack-merge');
+const {merge} = require('webpack-merge');
 const ImageMinimizerPlugin = require('image-minimizer-webpack-plugin');
+const WorkboxWebpackPlugin = require('workbox-webpack-plugin');
 
 module.exports = merge(common, {
   mode: 'production',
@@ -38,4 +39,21 @@ module.exports = merge(common, {
       ),
     ],
   },
+  plugins: [
+    new WorkboxWebpackPlugin.GenerateSW({
+      swDest: './sw.bundle.js',
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp('^https://restaurant-api.dicoding.dev/'),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'MyRestoApp-v1.0',
+            cacheableResponse: {
+              statuses: [200],
+            },
+          },
+        },
+      ],
+    }),
+  ],
 });

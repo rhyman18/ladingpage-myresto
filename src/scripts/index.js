@@ -1,62 +1,33 @@
 import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
-import data from '../DATA.json' assert { type: 'json' };
+import '../styles/responsive.css';
+import App from './views/app';
+import swRegister from './utils/swRegister';
 
-// deklarasi nav-menu, link, tombol hamburger, list resto
 const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLink = document.querySelectorAll('.nav-link');
-const listResto = document.getElementById('list-resto');
+const drawer = document.querySelector('.nav-menu');
+const navLinks = document.querySelectorAll('.nav-link');
+const mainContent = document.querySelector('#content');
+const skipLink = document.querySelector('.skip-link');
 
-// fungsi toggle navbar menu
-const mobileMenu = () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-}
+const app = new App({
+  button: hamburger,
+  drawer: drawer,
+  link: navLinks,
+  content: mainContent,
+});
 
-// fungsi tutup navbar menu
-const closeMenu = () => {
-    hamburger.classList.remove('active');
-    navMenu.classList.remove('active');
-}
+skipLink.addEventListener('click', (event) => {
+  event.preventDefault();
+  mainContent.scrollIntoView({behavior: 'smooth'});
+  skipLink.blur();
+});
 
-// event klik hamburger
-hamburger.addEventListener('click', mobileMenu);
+window.addEventListener('hashchange', () => {
+  app.renderPage();
+});
 
-// event klik navbar link
-navLink.forEach(n => n.addEventListener('click', closeMenu));
-
-// read DATA json file
-data.restaurants.forEach(resto => {
-    const items = document.createElement('div');
-    items.classList = 'resto';
-
-    const images = document.createElement('div');
-    images.classList = 'image-fluid';
-    images.innerHTML = `<img src="${resto.pictureId}" alt="Resto ${resto.name}" tabindex="0">`;
-
-    const kota = document.createElement('div');
-    kota.setAttribute('tabindex', 0);
-    kota.classList = 'kota';
-    kota.innerText = resto.city;
-
-    const rating = document.createElement('div');
-    rating.setAttribute('tabindex', 0);
-    rating.classList = 'rating';
-    rating.innerHTML = `Rating: <span class="nilai">${resto.rating}</span>`;
-
-    const name = document.createElement('h3');
-    name.setAttribute('tabindex', 0);
-    name.innerText = resto.name;
-
-    const desc = document.createElement('p');
-    desc.setAttribute('tabindex', 0);
-    desc.innerText = resto.description;
-
-    items.appendChild(images);
-    items.appendChild(kota);
-    items.appendChild(rating);
-    items.appendChild(name);
-    items.appendChild(desc);
-    listResto.appendChild(items);
-})
+window.addEventListener('load', () => {
+  app.renderPage();
+  swRegister();
+});

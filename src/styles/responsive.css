@@ -1,0 +1,126 @@
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .foot-misc {
+        flex-direction: row;
+    }
+
+    .foot-misc ul li {
+        height: 3rem;
+    }
+
+    .footnote {
+        flex-direction: row;
+    }
+
+    .detail__atas {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .detail__img {
+        width: 60%;
+    }
+
+    .detail__info {
+        gap: 10px;
+    }
+
+    .likeBtn, .likedBtn {
+        width: 100%;
+    }
+
+    .detail__bawah {
+        line-height: 32px;
+    }
+
+    .foods, .drinks {
+        gap: 25px;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    .nav-item {
+        margin: 0 0 0 3rem;
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    #hero h2 {
+        font-size: 50px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 5.5rem;
+        flex-direction: column;
+        background-color: #ffffff;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .container {
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: space-between;
+        text-align: left;
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+
+    .foot-profile {
+        align-items: baseline;
+    }
+
+    #content {
+        margin: 100px auto;
+    }
+
+    #restos {
+        margin-top: 50px;
+    }
+
+    #resto, #menus {
+        margin-top: 50px;
+        margin-bottom: 100px;
+    }
+
+    #menus {
+        gap: 60px;
+    }
+
+    #reviews {
+        gap: 30px;
+        margin-top: 50px;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    #hero {
+        width: 1200px;
+    }
+
+    .navbar {
+        padding: 1rem 0;
+    }
+
+    .container {
+        margin: 0 auto;
+    }
+
+    .footnote {
+        margin: 0 auto;
+    }
+}
