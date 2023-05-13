@@ -1,4 +1,4 @@
-import ApiSource from '/src/scripts/data/ApiSource';
+import ApiSource from '../../data/apiSource';
 import {createRestoItem} from '../templates/creator';
 
 const ListResto = {

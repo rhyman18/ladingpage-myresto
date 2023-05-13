@@ -1,7 +1,7 @@
-import CONFIG from '/src/scripts/global/config';
-import UrlParser from '/src/scripts/routes/urlParser';
-import ApiSource from '/src/scripts/data/ApiSource';
-import FavoriteInitiator from '/src/scripts/utils/FavoriteInitiator';
+import CONFIG from '../../global/config';
+import UrlParser from '../../routes/urlParser';
+import ApiSource from '../../data/apiSource';
+import FavoriteInitiator from '../../utils/favoriteInitiator';
 import {
   createRestoDetail,
   createMenuDetail,

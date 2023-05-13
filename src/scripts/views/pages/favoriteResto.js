@@ -1,4 +1,4 @@
-import FavoriteResto from '/src/scripts/data/favoriteResto';
+import FavoriteResto from '../../data/favoriteResto';
 import {createRestoItem} from '../templates/creator';
 
 const FavoriteRestos = {

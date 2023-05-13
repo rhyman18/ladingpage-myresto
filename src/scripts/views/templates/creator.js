@@ -1,5 +1,5 @@
-import CONFIG from '/src/scripts/global/config';
-import FontawesomeIcon from '/src/scripts/utils/FontawesomeIcon';
+import CONFIG from '../../global/config';
+import FontawesomeIcon from '../../utils/fontawesomeIcon';
 
 const createRestoItem = (resto) => `
 <a href="#/detail/${resto.id}" class="resto" aria-label="${resto.name}">
