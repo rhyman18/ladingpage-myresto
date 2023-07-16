@@ -1,4 +1,3 @@
-import { async } from 'regenerator-runtime';
 import favoriteInitiator from '../src/scripts/utils/favoriteInitiator';
 import FavoriteResto from '../src/scripts/data/favoriteResto';
 
@@ -64,5 +63,16 @@ describe('Liking A Resto', () => {
     expect(await FavoriteResto.getAllResto()).toEqual([{ id: 1 }]);
 
     FavoriteResto.deleteResto(1);
+  });
+
+  xit('should not add a resto when it has no id', async () => {
+    await favoriteInitiator.init({
+      favoriteContainer: document.querySelector('#fav'),
+      resto: {},
+    });
+
+    document.querySelector('#likeButton').dispatchEvent(new Event('click'));
+
+    expect(await FavoriteResto.getAllResto()).toEqual([]);
   });
 });
