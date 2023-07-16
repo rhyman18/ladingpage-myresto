@@ -59,9 +59,9 @@ ${reviews.map((review) => {
   }).join('')}
 `;
 
-const createLikeButton = () => `<button id="likeButton" class="likeBtn"><i class="fa-regular fa-heart"></i>Add to Favorite</div>`;
+const createLikeButton = () => `<button id="likeButton" aria-label="like this resto" class="likeBtn"><i class="fa-regular fa-heart"></i>Add to Favorite</div>`;
 
-const createLikedButton = () => `<button id="likeButton" class="likedBtn"><i class="fa-solid fa-heart"></i>Unfavorite</div>`;
+const createLikedButton = () => `<button id="likeButton" aria-label="unlike this resto" class="likedBtn"><i class="fa-solid fa-heart"></i>Unfavorite</div>`;
 
 export {
   createRestoItem,

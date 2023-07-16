@@ -9,4 +9,4 @@ Membuat landing page situs List Restoran di tiap Kota sebagai tugas submission d
 
 # Deployment Web
 
-Silahkan kunjungi **[]()** untuk melihat hasil jadi Website. Sebagai keterangan website di deploy di Vercel App.
+Silahkan kunjungi **[https://myresto-app.vercel.app](https://myresto-app.vercel.app)** untuk melihat hasil jadi Website. Website menggunakan fitur Service Worker seperti Progresive Web Apps agar dapat menjadi Aplikasi yang dapat di install, menangkap cache sehingga data web dapat diakses secara offline, Sebagai keterangan website di deploy di Vercel App.
