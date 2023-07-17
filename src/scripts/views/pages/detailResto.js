@@ -1,7 +1,7 @@
 import CONFIG from '../../global/config';
 import UrlParser from '../../routes/urlParser';
 import ApiSource from '../../data/apiSource';
-import FavoriteInitiator from '../../utils/favoriteInitiator';
+import FavoriteResto from '../../data/favoriteResto';
 import {
   createRestoDetail,
   createMenuDetail,
@@ -38,6 +38,7 @@ const DetailResto = {
     // render favorite button
     FavoriteInitiator.init({
       favoriteContainer: document.querySelector('#fav'),
+      favoriteResto: FavoriteResto,
       resto: {
         id: resto.restaurant.id,
         name: resto.restaurant.name,
