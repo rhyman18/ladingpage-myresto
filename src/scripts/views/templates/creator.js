@@ -59,15 +59,15 @@ ${reviews.map((review) => {
   }).join('')}
 `;
 
-const createLikeButton = () => `<button id="likeButton" aria-label="like this resto" class="likeBtn"><i class="fa-regular fa-heart"></i>Add to Favorite</div>`;
+const createLikeRestoButtonTemplate = () => `<button id="likeButton" aria-label="like this resto" class="likeBtn"><i class="fa-regular fa-heart"></i>Add to Favorite</div>`;
 
-const createLikedButton = () => `<button id="likeButton" aria-label="unlike this resto" class="likedBtn"><i class="fa-solid fa-heart"></i>Unfavorite</div>`;
+const createUnlikeRestoButtonTemplate = () => `<button id="likeButton" aria-label="unlike this resto" class="likedBtn"><i class="fa-solid fa-heart"></i>Unfavorite</div>`;
 
 export {
   createRestoItem,
   createRestoDetail,
   createMenuDetail,
   createReviewDetail,
-  createLikeButton,
-  createLikedButton,
+  createLikeRestoButtonTemplate,
+  createUnlikeRestoButtonTemplate,
 };

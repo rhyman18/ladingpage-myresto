@@ -1,7 +1,7 @@
 import FavoriteResto from '../data/favoriteResto';
-import {createLikeButton, createLikedButton} from '../views/templates/creator';
+import {createLikeRestoButtonTemplate, createUnlikeRestoButtonTemplate} from '../views/templates/creator';
 
-const favoriteInitiator = {
+const favoritePresenter = {
   async init({favoriteContainer, resto}) {
     this._favoriteContainer = favoriteContainer;
     this._resto = resto;
@@ -25,7 +25,7 @@ const favoriteInitiator = {
   },
 
   _renderLike() {
-    this._favoriteContainer.innerHTML = createLikeButton();
+    this._favoriteContainer.innerHTML = createLikeRestoButtonTemplate();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
@@ -35,7 +35,7 @@ const favoriteInitiator = {
   },
 
   _renderLiked() {
-    this._favoriteContainer.innerHTML = createLikedButton();
+    this._favoriteContainer.innerHTML = createUnlikeRestoButtonTemplate();
 
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
@@ -45,4 +45,4 @@ const favoriteInitiator = {
   },
 };
 
-export default favoriteInitiator;
+export default favoritePresenter;
