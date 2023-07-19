@@ -52,7 +52,7 @@ const DetailResto = {
 
     // render background hero
     const hero = document.querySelector('#hero');
-    hero.style = `background: rgba(0, 0, 0, .5) url('${resto.restaurant.pictureId ? CONFIG.BASE_IMAGE_LARGE_URL + resto.restaurant.pictureId : 'images/heros/hero-image.jpg'}') no-repeat;`;
+    hero.style = `background: rgba(0, 0, 0, .5) url('${resto.restaurant.pictureId ? CONFIG.BASE_IMAGE_LARGE_URL + resto.restaurant.pictureId : 'images/heros/hero-image.jpg'}') no-repeat center center;`;
   },
 };
 
