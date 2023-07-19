@@ -25,7 +25,7 @@ class FavoriteRestoSearchPresenter {
   }
 
   _showFoundResto(resto) {
-    this._view.showResto(resto);
+    this._view.showFavoriteResto(resto);
   }
 
   get latestQuery() {

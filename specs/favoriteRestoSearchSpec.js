@@ -70,23 +70,23 @@ describe('Searching resto', () => {
     // });
 
     it('should show the resto found by Favorite Resto', (done) => {
-      document.getElementById('resto-search-container').addEventListener('resto:searched:updated', () => {
+      document.getElementById('restos').addEventListener('resto:updated', () => {
         expect(document.querySelectorAll('.resto').length).toEqual(3);
 
         done();
       });
 
       favoriteResto.searchResto.withArgs('resto a').and.returnValues([
-        { id: 111, title: 'resto abc' },
-        { id: 222, title: 'ada juga resto abcde' },
-        { id: 333, title: 'ini juga boleh resto a' },
+        { id: 111, name: 'resto abc' },
+        { id: 222, name: 'ada juga resto abcde' },
+        { id: 333, name: 'ini juga boleh resto a' },
       ]);
 
       searchResto('resto a');
     });
 
     it('should show the name of the resto found by Favorite Resto', (done) => {
-      document.getElementById('resto-search-container').addEventListener('resto:searched:updated', () => {
+      document.getElementById('restos').addEventListener('resto:updated', () => {
         const restoTitles = document.querySelectorAll('.resto__title');
         expect(restoTitles.item(0).textContent).toEqual('resto abc');
         expect(restoTitles.item(1).textContent).toEqual('ada juga resto abcde');
@@ -96,16 +96,16 @@ describe('Searching resto', () => {
       });
 
       favoriteResto.searchResto.withArgs('resto a').and.returnValues([
-        { id: 111, title: 'resto abc' },
-        { id: 222, title: 'ada juga resto abcde' },
-        { id: 333, title: 'ini juga boleh resto a' },
+        { id: 111, name: 'resto abc' },
+        { id: 222, name: 'ada juga resto abcde' },
+        { id: 333, name: 'ini juga boleh resto a' },
       ]);
 
       searchResto('resto a');
     });
 
     it('should show - when the resto returned does not contain a title', (done) => {
-      document.getElementById('resto-search-container').addEventListener('resto:searched:updated', () => {
+      document.getElementById('restos').addEventListener('resto:updated', () => {
         const restoTitles = document.querySelectorAll('.resto__title');
         expect(restoTitles.item(0).textContent).toEqual('-');
 
@@ -144,8 +144,8 @@ describe('Searching resto', () => {
 
   describe('When no favorite resto could be found', () => {
     it('should show the empty message', (done) => {
-      document.getElementById('resto-search-container').addEventListener('resto:searched:updated', () => {
-        expect(document.querySelectorAll('.resto__not__found').length).toEqual(1);
+      document.getElementById('restos').addEventListener('resto:updated', () => {
+        expect(document.querySelectorAll('.resto-item__not__found').length).toEqual(1);
 
         done();
       });
@@ -156,7 +156,7 @@ describe('Searching resto', () => {
     });
 
     it('should not show any resto', (done) => {
-      document.getElementById('resto-search-container').addEventListener('resto:searched:updated', () => {
+      document.getElementById('restos').addEventListener('resto:updated', () => {
         expect(document.querySelectorAll('.resto').length).toEqual(0);
 
         done();
