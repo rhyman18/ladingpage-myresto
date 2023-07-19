@@ -48,15 +48,15 @@ describe('Searching resto', () => {
     //   presenter._showFoundResto([{ id: 1 }]);
     //   expect(document.querySelectorAll('.resto').length).toEqual(1);
 
-    //   presenter._showFoundResto([{ id: 1, title: 'Satu' }, { id: 2, title: 'Dua' }]);
+    //   presenter._showFoundResto([{ id: 1, name: 'Satu' }, { id: 2, name: 'Dua' }]);
     //   expect(document.querySelectorAll('.resto').length).toEqual(2);
     // });
 
     // it('should show the title of the found resto', () => {
-    //   presenter._showFoundResto([{ id: 1, title: 'Satu' }]);
+    //   presenter._showFoundResto([{ id: 1, name: 'Satu' }]);
     //   expect(document.querySelectorAll('.resto__title').item(0).textContent).toEqual('Satu');
 
-    //   presenter._showFoundResto([{ id: 1, title: 'Satu' }, { id: 2, title: 'Dua' }]);
+    //   presenter._showFoundResto([{ id: 1, name: 'Satu' }, { id: 2, name: 'Dua' }]);
 
     //   const restoTitles = document.querySelectorAll('.resto__title');
     //   expect(restoTitles.item(0).textContent).toEqual('Satu');

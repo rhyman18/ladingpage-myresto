@@ -19,7 +19,7 @@ const createRestoDetail = (resto) => `
     <img alt="${resto.name || '-'}" src="${resto.pictureId ? CONFIG.BASE_IMAGE_MEDIUM_URL + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" tabindex="0">
   </div>
   <div class="detail__info">
-    <h3>${resto.name || '-'}</h3>
+    <h3 class="resto__title">${resto.name || '-'}</h3>
     <p tabindex="0" aria-label="Rating ${resto.rating || '-'}">⭐️<span class="nilai">${resto.rating || '-'}</span></p>
     <div class="detail__kategori">
   ${resto.categories.map((category) => {

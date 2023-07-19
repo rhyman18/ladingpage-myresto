@@ -67,15 +67,15 @@ describe('Showing all favorite resto', () => {
     //   presenter._displayResto([
     //     {
     //       id: 11,
-    //       title: 'A',
-    //       vote_average: 3,
-    //       overview: 'Sebuah resto A',
+    //       name: 'A',
+    //       rating: 3,
+    //       description: 'Sebuah resto A',
     //     },
     //     {
     //       id: 22,
-    //       title: 'B',
-    //       vote_average: 4,
-    //       overview: 'Sebuah resto B',
+    //       name: 'B',
+    //       rating: 4,
+    //       description: 'Sebuah resto B',
     //     },
     //   ]);
 
@@ -94,15 +94,15 @@ describe('Showing all favorite resto', () => {
       favoriteResto.getAllResto.and.returnValues([
         {
           id: 11,
-          title: 'A',
-          vote_average: 3,
-          overview: 'Sebuah resto A',
+          name: 'A',
+          rating: 3,
+          description: 'Sebuah resto A',
         },
         {
           id: 22,
-          title: 'B',
-          vote_average: 4,
-          overview: 'Sebuah resto B',
+          name: 'B',
+          rating: 4,
+          description: 'Sebuah resto B',
         },
       ]);
 
