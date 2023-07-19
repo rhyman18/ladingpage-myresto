@@ -1,13 +1,13 @@
 class FavoriteRestoSearchPresenter {
-  constructor({ favoriteResto }) {
-    this._listenToSearchRequestByUser();
+  constructor({ favoriteResto, view }) {
+    this._view = view;
     this._favoriteResto = favoriteResto;
+    this._listenToSearchRequestByUser();
   }
 
   _listenToSearchRequestByUser = () => {
-    this._queryElement = document.getElementById('query');
-    this._queryElement.addEventListener('change', (event) => {
-      this._searchResto(event.target.value);
+    this._view.runWhenUserIsSearching((latestQuery) => {
+      this._searchResto(latestQuery);
     });
   };
 
@@ -25,18 +25,7 @@ class FavoriteRestoSearchPresenter {
   }
 
   _showFoundResto(resto) {
-    let html;
-    if (!resto) return;
-
-    if (resto.length > 0) {
-      html = resto.reduce((carry, resto) => carry.concat(`<li class="resto"><span class="resto__title">${resto.title || '-'}</span></li>`), '');
-    } else {
-      html = '<div class="resto__not__found">Resto tidak ditemukan</div>';
-    }
-
-    document.querySelector('.restos').innerHTML = html;
-
-    document.getElementById('resto-search-container').dispatchEvent(new Event('resto:searched:updated'));
+    this._view.showResto(resto);
   }
 
   get latestQuery() {
