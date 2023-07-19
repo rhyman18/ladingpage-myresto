@@ -17,7 +17,7 @@ const createRestoItemSkeleton = (count) => {
   let template = '';
   for (let i = 0; i < count; i++) {
     template += `
-      <a class="resto" aria-label="loading">
+      <a class="resto" aria-label="skeleton loading">
         <div class="image-fluid">
           <img class="lazyload" alt="loading" src="./images/placeholder.png">
         </div>
