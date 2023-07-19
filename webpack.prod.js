@@ -31,7 +31,10 @@ module.exports = merge(common, {
               implementation: ImageMinimizerPlugin.imageminMinify,
               options: {
                 plugins: [
-                  ['imagemin-mozjpeg', {progressive: true}],
+                  ['imagemin-mozjpeg', {
+                    quality: 50,
+                    progressive: true,
+                  }],
                 ],
               },
             },
