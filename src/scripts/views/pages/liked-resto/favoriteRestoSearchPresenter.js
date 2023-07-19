@@ -12,17 +12,27 @@ class FavoriteRestoSearchPresenter {
   };
 
   async _searchResto(latestQuery) {
-    this._latestQuery = latestQuery;
+    this._latestQuery = latestQuery.trim();
 
-    const foundResto = await this._favoriteResto.searchResto(this.latestQuery);
+    let foundResto;
+    if (this.latestQuery.length > 0) {
+      foundResto = await this._favoriteResto.searchResto(this.latestQuery);
+    } else {
+      foundResto = await this._favoriteResto.getAllResto();
+    }
 
     this._showFoundResto(foundResto);
   }
 
   _showFoundResto(resto) {
+    let html;
     if (!resto) return;
 
-    const html = resto.reduce((carry, resto) => carry.concat(`<li class="resto"><span class="resto__title">${resto.title || '-'}</span></li>`), '');
+    if (resto.length > 0) {
+      html = resto.reduce((carry, resto) => carry.concat(`<li class="resto"><span class="resto__title">${resto.title || '-'}</span></li>`), '');
+    } else {
+      html = '<div class="resto__not__found">Resto tidak ditemukan</div>';
+    }
 
     document.querySelector('.restos').innerHTML = html;
 

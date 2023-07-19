@@ -24,6 +24,18 @@ const favoriteRestoArray = {
   deleteResto(id) {
     favoriteRestos = favoriteRestos.filter((resto) => resto.id !== id);
   },
+
+  searchResto(query) {
+    return this.getAllResto().filter((resto) => {
+      const loweredCaseRestoTitle = (resto.title || '-').toLowerCase();
+      const jammedRestoTitle = loweredCaseRestoTitle.replace(/\s+/g, '');
+
+      const loweredCaseQuery = query.toLowerCase();
+      const jammedQuery = loweredCaseQuery.replace(/\s+/g, '');
+
+      return jammedRestoTitle.indexOf(jammedQuery) !== -1;
+    });
+  },
 };
 
 describe('Favorite Resto Array Contract Test Implementation', () => {
