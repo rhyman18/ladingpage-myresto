@@ -1,3 +1,5 @@
+import { createRestoItem } from '../../templates/creator';
+
 class FavoriteRestoSearchView {
   getTemplate() {
     return `
@@ -6,6 +8,16 @@ class FavoriteRestoSearchView {
         <div class="resto-result-container">
           <ul class="restos">
           </ul>
+        </div>
+      </div>
+    `;
+  }
+
+  getFavoriteRestoTemplate() {
+    return `
+      <div class="content">
+        <h2 class="content__heading">Your Liked Resto</h2>
+        <div id="restos" class="restos">
         </div>
       </div>
     `;
@@ -30,6 +42,19 @@ class FavoriteRestoSearchView {
     document.querySelector('.restos').innerHTML = html;
 
     document.getElementById('resto-search-container').dispatchEvent(new Event('resto:searched:updated'));
+  }
+
+  showFavoriteResto(resto = []) {
+    let html;
+    if (resto.length) {
+      html = resto.reduce((carry, resto) => carry.concat(createRestoItem(resto)), '');
+    } else {
+      html = '<div class="resto-item__not__found"></div>';
+    }
+
+    document.querySelector('.restos').innerHTML = html;
+
+    document.querySelector('.restos').dispatchEvent(new Event('resto:updated'));
   }
 }
 
