@@ -2,13 +2,19 @@ import { createRestoItem } from '../../templates/creator';
 
 class FavoriteRestoSearchView {
   getTemplate() {
+    // return `
+    //   <div id="content">
+    //     <input id="query" type="text">
+    //     <h2 class="content__heading">Your Liked Resto</h2>
+    //     <div id="restos" class="restos">
+    //     </div>
+    //   </div>
+    // `;
     return `
-      <div id="content">
-        <input id="query" type="text">
-        <h2 class="content__heading">Your Liked Resto</h2>
-        <div id="restos" class="restos">
-        </div>
-      </div>
+      <input id="query" type="text">
+      <span class="sub-title">Tandai</span>
+      <h2 tabindex="0">Favorite Restoran</h2>
+      <div id="restos"></div>
     `;
   }
 
