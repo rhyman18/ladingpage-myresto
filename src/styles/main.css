@@ -74,7 +74,7 @@ header {
 }
 
 #hero {
-  height: 60vh;
+  height: 50vh;
   background-blend-mode: darken;
   background-position: 50%;
   background-size: cover;
@@ -85,6 +85,7 @@ header {
   width: 100%;
   margin: 0 auto;
   padding: 0 1rem;
+  background: rgba(0, 0, 0, .5) url('../public/images/hero-image-small.jpg') no-repeat center center;
 }
 
 #hero h2 {

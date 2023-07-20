@@ -19,10 +19,6 @@ const ListResto = {
     restos.restaurants.forEach((resto) => {
       restosContainer.innerHTML += createRestoItem(resto);
     });
-
-    // render background hero
-    const hero = document.querySelector('#hero');
-    hero.style = `background: rgba(0, 0, 0, .5) url('images/heros/hero-image.jpg') no-repeat center center;`;
   },
 };
 
