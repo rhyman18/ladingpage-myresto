@@ -1,4 +1,3 @@
-import CONFIG from '../../global/config';
 import UrlParser from '../../routes/urlParser';
 import ApiSource from '../../data/apiSource';
 import FavoriteResto from '../../data/favoriteResto';
