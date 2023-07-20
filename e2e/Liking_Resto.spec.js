@@ -36,6 +36,37 @@ Scenario('liking one resto', async ({ I }) => {
   assert.strictEqual(firstRestoTitle, likedRestoTitle);
 });
 
+Scenario('unlike one resto', async ({ I }) => {
+  I.see('Tidak ada resto untuk ditampilkan', '.resto-item__not__found');
+
+  I.amOnPage('/');
+
+  I.waitForElement('.resto');
+  I.seeElement('.resto');
+
+  I.click(locate('.resto').first());
+
+  I.waitForElement('#likeButton');
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorite');
+
+  I.waitForElement('.resto');
+  I.seeElement('.resto');
+
+  I.click(locate('.resto').first());
+
+  I.waitForElement('#likeButton');
+  I.seeElement('#likeButton');
+  I.click('#likeButton');
+
+  I.amOnPage('/#/favorite');
+
+  I.waitForElement('.resto-item__not__found');
+  I.see('Tidak ada resto untuk ditampilkan', '.resto-item__not__found');
+});
+
 Scenario('Searching resto', async ({ I }) => {
   I.see('Tidak ada resto untuk ditampilkan', '.resto-item__not__found');
 

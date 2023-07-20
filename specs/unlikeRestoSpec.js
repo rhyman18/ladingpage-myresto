@@ -35,7 +35,7 @@ describe('Unliking A Resto', () => {
     expect(await FavoriteResto.getAllResto()).toEqual([]);
   });
 
-  it('should not throw error if the unliked movie is not in the list', async () => {
+  it('should not throw error if the unliked resto is not in the list', async () => {
     await TestFactories.createLikeButtonPresenterWithResto({ id: 1 });
 
     await FavoriteResto.deleteResto(1);

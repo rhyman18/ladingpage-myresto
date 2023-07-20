@@ -4,7 +4,7 @@ import FontawesomeIcon from '../../utils/fontawesomeIcon';
 const createRestoItem = (resto) => `
 <a href="#/detail/${resto.id}" class="resto" aria-label="${resto.name || '-'}">
   <div class="image-fluid">
-    <img class="lazyload" alt="${resto.name || '-'}" src="${resto.pictureId ? CONFIG.BASE_IMAGE_SMALL_URL + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
+    <img class="lazyload" alt="${resto.name || '-'}" data-src="${resto.pictureId ? CONFIG.BASE_IMAGE_SMALL_URL + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}">
   </div>
   <div class="kota" tabindex="0">${resto.city || '-'}</div>
   <div class="rating" tabindex="0" aria-label="Rating ${resto.rating || '-'}">⭐️<span class="nilai">${resto.rating || '-'}</span></div>
@@ -19,7 +19,7 @@ const createRestoItemSkeleton = (count) => {
     template += `
       <a class="resto" aria-label="skeleton loading">
         <div class="image-fluid">
-          <img class="lazyload" alt="loading" src="./images/placeholder.png">
+          <img class="lazyload" alt="dummy images" data-src="./images/placeholder.png">
         </div>
         <div class="kota" tabindex="0">City</div>
         <div class="rating" tabindex="0" aria-label="Rating 5">⭐️<span class="nilai">5</span></div>
@@ -34,7 +34,7 @@ const createRestoItemSkeleton = (count) => {
 const createRestoDetail = (resto) => `
 <div class="detail__atas">
   <div class="detail__img">
-    <img class="lazyload" alt="${resto.name || '-'}" src="${resto.pictureId ? CONFIG.BASE_IMAGE_MEDIUM_URL + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" tabindex="0">
+    <img class="lazyload" alt="${resto.name || '-'}" data-src="${resto.pictureId ? CONFIG.BASE_IMAGE_MEDIUM_URL + resto.pictureId : 'https://picsum.photos/id/666/800/450?grayscale'}" tabindex="0">
   </div>
   <div class="detail__info">
     <h3 class="resto__title">${resto.name || '-'}</h3>
